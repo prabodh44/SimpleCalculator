@@ -152,6 +152,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.8017578125" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="clearNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kT6-GG-7w7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV6-w7-mBe">
                                 <rect key="frame" x="117" y="357" width="50" height="50"/>

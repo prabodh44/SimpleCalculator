@@ -39,28 +39,30 @@
     _theNumber = @"0";
 }
 
+-(IBAction)clearNum:(id)sender{
+    _theNumber = @"0";
+    [self printNumber];
+}
+
 -(IBAction) calculate:(id)sender {
     _num2 = [_theNumber integerValue];
-    switch (operand) {
+    switch (_operand) {
         case PLUS:
             _answer = _num1 + _num2;
             break;
         case MINUS:
-            _answer = _num1 - num2;
+            _answer = _num1 - _num2;
             break;
         case MULTIPLY:
             _answer = _num1 * _num2;
             break;
         case DIVIDE:
-            _answer = _num1 / num2;
-            break;
+            _answer = _num1 / _num2;
         default:
             break;
     }
-    
     _theNumber = [NSString stringWithFormat:@"%f", _answer];
     [self printNumber];
-    
     _num1 = 0;
     _num2 = 0;
     _answer = 0.0;
