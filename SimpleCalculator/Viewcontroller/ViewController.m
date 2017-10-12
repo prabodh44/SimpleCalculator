@@ -52,7 +52,7 @@
             break;
         case MINUS:
             _answer = _num1 - _num2;
-            break;
+            break; 
         case MULTIPLY:
             _answer = _num1 * _num2;
             break;
