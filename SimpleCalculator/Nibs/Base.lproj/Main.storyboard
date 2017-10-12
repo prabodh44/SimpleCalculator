@@ -69,6 +69,9 @@
                                 <color key="backgroundColor" white="0.8017578125" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="setPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2H-Ol-6v7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EmL-FH-Gek">
                                 <rect key="frame" x="40" y="241" width="50" height="50"/>
@@ -103,6 +106,9 @@
                                 <color key="backgroundColor" white="0.8017578125" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="setMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ap4-6M-B9M"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE5-im-But">
                                 <rect key="frame" x="40" y="299" width="50" height="50"/>
@@ -137,6 +143,9 @@
                                 <color key="backgroundColor" white="0.8017578125" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="*"/>
+                                <connections>
+                                    <action selector="setMultiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="19y-RA-zgR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwc-lI-yrJ">
                                 <rect key="frame" x="40" y="357" width="50" height="50"/>
@@ -166,6 +175,9 @@
                                 <color key="backgroundColor" white="0.8017578125" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="/"/>
+                                <connections>
+                                    <action selector="setDivide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9T6-Ta-2ew"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

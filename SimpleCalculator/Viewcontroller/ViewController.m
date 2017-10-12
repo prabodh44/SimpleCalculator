@@ -34,7 +34,34 @@
     NSLog(@"printNumber : %@", _theNumber);
 }
 
-//adding event handlers for button presses
+-(void) saveNum1 {
+    _num1 = [_theNumber integerValue];
+    _theNumber = @"0";
+}
+//TODO: figure out a way to condense the set* functions into one function
+//adding event handlers for operand button presses
+-(IBAction)setPlus:(id)sender{
+    [self saveNum1];
+    _operand = PLUS;
+}
+
+-(IBAction) setMinus:(id)sender{
+    [self saveNum1];
+    _operand = MINUS;
+}
+
+-(IBAction) setMultiply:(id)sender{
+    [self saveNum1];
+    _operand = MULTIPLY;
+}
+
+-(IBAction) setDivide:(id)sender{
+    [self saveNum1];
+    _operand = DIVIDE;
+}
+
+//TODO: figure out a way to condense the press* functions into one function
+//adding event handlers for number button presses
 -(IBAction)press9:(id)sender{
     _theNumber = [_theNumber stringByAppendingString:@"9"];
     [self printNumber];
