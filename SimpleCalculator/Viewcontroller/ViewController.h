@@ -36,8 +36,8 @@
 
 @property NSInteger num1;
 @property NSInteger num2;
-@property double operand;
-@property NSInteger answer;
+@property NSInteger operand;
+@property double answer;
 
 @property (strong, nonatomic) NSString *theNumber;
 //using string in this context
