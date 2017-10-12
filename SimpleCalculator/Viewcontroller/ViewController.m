@@ -57,7 +57,12 @@
             _answer = _num1 * _num2;
             break;
         case DIVIDE:
-            _answer = _num1 / _num2;
+            if(_num2 == 0){
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot divide by zero" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
+            }
+            _answer = (double)_num1 / (double)_num2;
+            break;
         default:
             break;
     }
