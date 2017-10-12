@@ -21,7 +21,7 @@
     //doing initilizations
     _num1 = 0;
     _num2 = 0;
-    _answer = 0.0; 
+    _answer = 0.0;
     _operand = PLUS;
     
     _theNumber = @"0";
@@ -34,6 +34,56 @@
     NSLog(@"printNumber : %@", _theNumber);
 }
 
+//adding event handlers for button presses
+-(IBAction)press9:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"9"];
+    [self printNumber];
+}
+
+-(IBAction)press8:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"8"];
+    [self printNumber];
+}
+
+-(IBAction)press7:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"7"];
+    [self printNumber];
+}
+
+-(IBAction)press6:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"6"];
+    [self printNumber];
+}
+
+-(IBAction)press5:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"5"];
+    [self printNumber];
+}
+
+-(IBAction)press4:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"4"];
+    [self printNumber];
+}
+
+-(IBAction)press3:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"3"];
+    [self printNumber];
+}
+
+-(IBAction)press2:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"2"];
+    [self printNumber];
+}
+
+-(IBAction)press1:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"1"];
+    [self printNumber];
+}
+
+-(IBAction)press0:(id)sender{
+    _theNumber = [_theNumber stringByAppendingString:@"0"];
+    [self printNumber];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
