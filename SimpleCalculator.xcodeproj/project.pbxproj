@@ -101,13 +101,10 @@
 		76AE6D361F8F458B009298A9 /* SimpleCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				76AE6D371F8F458B009298A9 /* AppDelegate.h */,
-				76AE6D381F8F458B009298A9 /* AppDelegate.m */,
-				76AE6D3A1F8F458B009298A9 /* ViewController.h */,
-				76AE6D3B1F8F458B009298A9 /* ViewController.m */,
-				76AE6D3D1F8F458B009298A9 /* Main.storyboard */,
+				76AE6D6C1F8F45D6009298A9 /* Viewcontroller */,
+				76AE6D6B1F8F45C4009298A9 /* Classes */,
+				76AE6D6A1F8F45B4009298A9 /* Nibs */,
 				76AE6D401F8F458B009298A9 /* Assets.xcassets */,
-				76AE6D421F8F458B009298A9 /* LaunchScreen.storyboard */,
 				76AE6D451F8F458B009298A9 /* Info.plist */,
 				76AE6D461F8F458B009298A9 /* main.m */,
 			);
@@ -130,6 +127,33 @@
 				76AE6D5D1F8F458B009298A9 /* Info.plist */,
 			);
 			path = SimpleCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		76AE6D6A1F8F45B4009298A9 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				76AE6D3D1F8F458B009298A9 /* Main.storyboard */,
+				76AE6D421F8F458B009298A9 /* LaunchScreen.storyboard */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		76AE6D6B1F8F45C4009298A9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				76AE6D371F8F458B009298A9 /* AppDelegate.h */,
+				76AE6D381F8F458B009298A9 /* AppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		76AE6D6C1F8F45D6009298A9 /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				76AE6D3A1F8F458B009298A9 /* ViewController.h */,
+				76AE6D3B1F8F458B009298A9 /* ViewController.m */,
+			);
+			path = Viewcontroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
