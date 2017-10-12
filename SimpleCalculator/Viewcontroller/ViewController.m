@@ -24,7 +24,7 @@
     _answer = 0.0;
     _operand = PLUS;
     
-    _theNumber = @"0";
+    _theNumber = @"";
     [self printNumber];
     
 }
@@ -36,11 +36,11 @@
 
 -(void) saveNum1 {
     _num1 = [_theNumber integerValue];
-    _theNumber = @"0";
+    _theNumber = @"";
 }
 
 -(IBAction)clearNum:(id)sender{
-    _theNumber = @"0";
+    _theNumber = @"";
     [self printNumber];
 }
 
@@ -52,7 +52,7 @@
             break;
         case MINUS:
             _answer = _num1 - _num2;
-            break; 
+            break;
         case MULTIPLY:
             _answer = _num1 * _num2;
             break;
@@ -66,7 +66,16 @@
         default:
             break;
     }
-    _theNumber = [NSString stringWithFormat:@"%f", _answer];
+    if(_operand != DIVIDE){
+        _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
+    }else{
+        //TODO: think of a better logic here
+        if(_num1 % _num2 == 0){
+            _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
+        }else{
+            _theNumber = [NSString stringWithFormat:@"%f", _answer];
+        }
+    }
     [self printNumber];
     _num1 = 0;
     _num2 = 0;
