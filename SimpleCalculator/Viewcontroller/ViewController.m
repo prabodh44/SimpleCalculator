@@ -25,8 +25,7 @@
     _operand = PLUS;
     
     _theNumber = @"";
-    [self printNumber];
-    
+    [self printNumber];    
 }
 
 -(void) printNumber {
@@ -61,7 +60,7 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot divide by zero" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alert show];
             }
-            _answer = (double)_num1 / (double)_num2;
+                _answer = (double)_num1 / (double)_num2;
             break;
         default:
             break;
@@ -70,10 +69,10 @@
         _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
     }else{
         //TODO: think of a better logic here
-        if(_num1 % _num2 == 0){
+        if(_num2 != 0 && _num1 % _num2 == 0){
             _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
         }else{
-            _theNumber = [NSString stringWithFormat:@"%f", _answer];
+           _theNumber = [NSString stringWithFormat:@"%f", _answer];
         }
     }
     [self printNumber];
