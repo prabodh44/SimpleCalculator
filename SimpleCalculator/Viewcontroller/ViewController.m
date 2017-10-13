@@ -29,7 +29,6 @@
     _oncePressed = true;
     
     _theNumber = @"";
-    //[self printNumber];
 }
 
 -(void) printNumber {
@@ -48,10 +47,9 @@
 
 -(IBAction) calculate:(id)sender {
     _num2 = [_theNumber integerValue];
-    
     _isEqualPressed = true;
     _oncePressed = true;
-    
+
     switch (_operand) {
         case PLUS:
             _answer = _num1 + _num2;
@@ -90,7 +88,6 @@
         _operand = PLUS;
         NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
         [_lblText setText:output];
-        NSLog(@"setPlus -> _num1 : %lu", _num1);
     }
     _oncePressed = false;
 }
