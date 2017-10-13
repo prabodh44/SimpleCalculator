@@ -25,8 +25,11 @@
     _answer = 0.0;
     _operand = PLUS;
     
+    _isEqualPressed = false;
+    _oncePressed = true;
+    
     _theNumber = @"";
-    [self printNumber];
+    //[self printNumber];
 }
 
 -(void) printNumber {
@@ -45,6 +48,10 @@
 
 -(IBAction) calculate:(id)sender {
     _num2 = [_theNumber integerValue];
+    
+    _isEqualPressed = true;
+    _oncePressed = true;
+    
     switch (_operand) {
         case PLUS:
             _answer = _num1 + _num2;
@@ -73,50 +80,68 @@
     [self printNumber];
     _num1 = 0;
     _num2 = 0;
-    _answer = 0.0; 
+    _answer = 0.0;
 }
 //TODO: figure out a way to condense the set* functions into one function
 //adding event handlers for operand button presses
 -(IBAction)setPlus:(id)sender{
-    [self saveNum1];
-    _operand = PLUS;
-    NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
-    [_lblText setText:output];
-    
+    if(_oncePressed){
+        [self saveNum1];
+        _operand = PLUS;
+        NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
+        [_lblText setText:output];
+        NSLog(@"setPlus -> _num1 : %lu", _num1);
+    }
+    _oncePressed = false;
 }
 
 -(IBAction) setMinus:(id)sender{
-    [self saveNum1];
-    _operand = MINUS;
-    NSString *output = [NSString stringWithFormat:@"%lu -", _num1];
-    [_lblText setText:output];
+    if(_oncePressed){
+        [self saveNum1];
+        _operand = MINUS;
+        NSString *output = [NSString stringWithFormat:@"%lu -", _num1];
+        [_lblText setText:output];
+    }
+    _oncePressed = false;
 }
 
 -(IBAction) setMultiply:(id)sender{
-    [self saveNum1];
-    _operand = MULTIPLY;
-    NSString *output = [NSString stringWithFormat:@"%lu *", _num1];
-    [_lblText setText:output];
+    if(_oncePressed){
+        [self saveNum1];
+        _operand = MULTIPLY;
+        NSString *output = [NSString stringWithFormat:@"%lu *", _num1];
+        [_lblText setText:output];
+    }
+    _oncePressed = false;
 }
 
 -(IBAction) setDivide:(id)sender{
-    [self saveNum1];
-    _operand = DIVIDE;
-    NSString *output = [NSString stringWithFormat:@"%lu /", _num1];
-    [_lblText setText:output];
+    if(_oncePressed){
+        [self saveNum1];
+        _operand = DIVIDE;
+        NSString *output = [NSString stringWithFormat:@"%lu /", _num1];
+        [_lblText setText:output];
+    }
+    _oncePressed = false;
 }
 
 -(IBAction)setSquareRoot:(id)sender{
-    [self saveNum1];
-    _operand = SQRT;
-    NSString *output = [NSString stringWithFormat:@"sqrt(%lu)", _num1];
-    [_lblText setText:output];
+    if(_oncePressed){
+        [self saveNum1];
+        _operand = SQRT;
+        NSString *output = [NSString stringWithFormat:@"sqrt(%lu)", _num1];
+        [_lblText setText:output];
+    }
+    _oncePressed = false;
 }
 
-
-//adding event handlers for number button presses
+//a function to handle
+//button press events
 -(IBAction)numberPressed:(id)sender{
     NSString *tag = [NSString stringWithFormat:@"%lu", [sender tag]];
+    if(_isEqualPressed){
+        _theNumber = @"";
+    }
     _theNumber = [_theNumber stringByAppendingString:tag];
     [self printNumber];
 }
