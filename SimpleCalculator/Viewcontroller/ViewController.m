@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#include "math.h" //header file for the sqrt function
 
 @interface ViewController ()
 
@@ -54,6 +55,9 @@
         case MULTIPLY:
             _answer = _num1 * _num2;
             break;
+        case SQRT:
+            _answer = sqrt((double) _num1);
+            break;
         case DIVIDE:
             if(_num2 == 0){
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot divide by zero" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -64,16 +68,8 @@
         default:
             break;
     }
-    if(_operand != DIVIDE){
-        _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
-    }else{
-        //TODO: think of a better logic here
-        if(_num2 != 0 && _num1 % _num2 == 0){
-            _theNumber = [NSString stringWithFormat:@"%.0f", _answer];
-        }else{
-           _theNumber = [NSString stringWithFormat:@"%f", _answer];
-        }
-    }
+
+    _theNumber = [NSString stringWithFormat:@"%g", _answer];
     [self printNumber];
     _num1 = 0;
     _num2 = 0;
@@ -107,6 +103,13 @@
     [self saveNum1];
     _operand = DIVIDE;
     NSString *output = [NSString stringWithFormat:@"%lu /", _num1];
+    [_lblText setText:output];
+}
+
+-(IBAction)setSquareRoot:(id)sender{
+    [self saveNum1];
+    _operand = SQRT;
+    NSString *output = [NSString stringWithFormat:@"sqrt(%lu)", _num1];
     [_lblText setText:output];
 }
 

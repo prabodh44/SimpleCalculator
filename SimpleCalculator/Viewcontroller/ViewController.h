@@ -14,6 +14,7 @@
 #define MINUS 1
 #define MULTIPLY 2
 #define DIVIDE 3
+#define SQRT 4
 
 //{
 //    NSInteger num1;
