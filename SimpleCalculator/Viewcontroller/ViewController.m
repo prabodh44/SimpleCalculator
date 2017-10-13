@@ -73,7 +73,7 @@
     [self printNumber];
     _num1 = 0;
     _num2 = 0;
-    _answer = 0.0;
+    _answer = 0.0; 
 }
 //TODO: figure out a way to condense the set* functions into one function
 //adding event handlers for operand button presses
