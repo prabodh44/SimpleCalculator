@@ -25,12 +25,11 @@
     _operand = PLUS;
     
     _theNumber = @"";
-    [self printNumber];    
+    [self printNumber];
 }
 
 -(void) printNumber {
     [_lblText setText:_theNumber];
-    NSLog(@"printNumber : %@", _theNumber);
 }
 
 -(void) saveNum1 {
@@ -85,21 +84,30 @@
 -(IBAction)setPlus:(id)sender{
     [self saveNum1];
     _operand = PLUS;
+    NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
+    [_lblText setText:output];
+    
 }
 
 -(IBAction) setMinus:(id)sender{
     [self saveNum1];
     _operand = MINUS;
+    NSString *output = [NSString stringWithFormat:@"%lu -", _num1];
+    [_lblText setText:output];
 }
 
 -(IBAction) setMultiply:(id)sender{
     [self saveNum1];
     _operand = MULTIPLY;
+    NSString *output = [NSString stringWithFormat:@"%lu *", _num1];
+    [_lblText setText:output];
 }
 
 -(IBAction) setDivide:(id)sender{
     [self saveNum1];
     _operand = DIVIDE;
+    NSString *output = [NSString stringWithFormat:@"%lu /", _num1];
+    [_lblText setText:output];
 }
 
 //TODO: figure out a way to condense the press* functions into one function
