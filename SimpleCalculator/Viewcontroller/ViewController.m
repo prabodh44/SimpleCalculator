@@ -29,6 +29,7 @@
     _oncePressed = true;
     
     _theNumber = @"";
+    //[self printNumber];
 }
 
 -(void) printNumber {
@@ -47,9 +48,10 @@
 
 -(IBAction) calculate:(id)sender {
     _num2 = [_theNumber integerValue];
+    
     _isEqualPressed = true;
     _oncePressed = true;
-
+    
     switch (_operand) {
         case PLUS:
             _answer = _num1 + _num2;
@@ -68,12 +70,12 @@
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot divide by zero" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alert show];
             }
-                _answer = (double)_num1 / (double)_num2;
+            _answer = (double)_num1 / (double)_num2;
             break;
         default:
             break;
     }
-
+    
     _theNumber = [NSString stringWithFormat:@"%g", _answer];
     [self printNumber];
     _num1 = 0;
@@ -88,6 +90,7 @@
         _operand = PLUS;
         NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
         [_lblText setText:output];
+        NSLog(@"setPlus -> _num1 : %lu", _num1);
     }
     _oncePressed = false;
 }
@@ -135,10 +138,15 @@
 //a function to handle
 //button press events
 -(IBAction)numberPressed:(id)sender{
+    NSLog(@"numberPressed outside if-> _oncePressed: %d", (int)_oncePressed);
     NSString *tag = [NSString stringWithFormat:@"%lu", [sender tag]];
+    
+    //code to not appened number to answer
     if(_isEqualPressed){
         _theNumber = @"";
+        _isEqualPressed = false;
     }
+    
     _theNumber = [_theNumber stringByAppendingString:tag];
     [self printNumber];
 }
