@@ -26,7 +26,7 @@
     _operand = PLUS;
     
     _isEqualPressed = false;
-    _oncePressed = true;
+    _operandPressed = true;
     
     _theNumber = @"";
     //[self printNumber];
@@ -50,7 +50,7 @@
     _num2 = [_theNumber integerValue];
     
     _isEqualPressed = true;
-    _oncePressed = true;
+    _operandPressed = true;
     
     switch (_operand) {
         case PLUS:
@@ -85,63 +85,64 @@
 //TODO: figure out a way to condense the set* functions into one function
 //adding event handlers for operand button presses
 -(IBAction)setPlus:(id)sender{
-    if(_oncePressed){
+    if(_operandPressed){
         [self saveNum1];
         _operand = PLUS;
         NSString *output = [NSString stringWithFormat:@"%lu +", _num1];
         [_lblText setText:output];
         NSLog(@"setPlus -> _num1 : %lu", _num1);
     }
-    _oncePressed = false;
+    _operandPressed = false;
 }
 
 -(IBAction) setMinus:(id)sender{
-    if(_oncePressed){
+    if(_operandPressed){
         [self saveNum1];
         _operand = MINUS;
         NSString *output = [NSString stringWithFormat:@"%lu -", _num1];
         [_lblText setText:output];
     }
-    _oncePressed = false;
+    _operandPressed = false;
 }
 
 -(IBAction) setMultiply:(id)sender{
-    if(_oncePressed){
+    if(_operandPressed){
         [self saveNum1];
         _operand = MULTIPLY;
         NSString *output = [NSString stringWithFormat:@"%lu *", _num1];
         [_lblText setText:output];
     }
-    _oncePressed = false;
+    _operandPressed = false;
 }
 
 -(IBAction) setDivide:(id)sender{
-    if(_oncePressed){
+    if(_operandPressed){
         [self saveNum1];
         _operand = DIVIDE;
         NSString *output = [NSString stringWithFormat:@"%lu /", _num1];
         [_lblText setText:output];
     }
-    _oncePressed = false;
+    _operandPressed = false;
 }
 
 -(IBAction)setSquareRoot:(id)sender{
-    if(_oncePressed){
+    if(_operandPressed){
         [self saveNum1];
         _operand = SQRT;
         NSString *output = [NSString stringWithFormat:@"sqrt(%lu)", _num1];
         [_lblText setText:output];
     }
-    _oncePressed = false;
+    _operandPressed = false;
 }
 
 //a function to handle
 //button press events
 -(IBAction)numberPressed:(id)sender{
-    NSLog(@"numberPressed outside if-> _oncePressed: %d", (int)_oncePressed);
+    NSLog(@"numberPressed outside if-> _oncePressed: %d", (int)_operandPressed);
     NSString *tag = [NSString stringWithFormat:@"%lu", [sender tag]];
     
     //code to not appened number to answer
+    //after equals to is pressed
     if(_isEqualPressed){
         _theNumber = @"";
         _isEqualPressed = false;

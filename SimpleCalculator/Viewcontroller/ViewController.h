@@ -22,7 +22,7 @@
 @property NSInteger operand;
 @property double answer;
 @property BOOL isEqualPressed;
-@property BOOL oncePressed;
+@property BOOL operandPressed;
 
 @property (strong, nonatomic) NSString *theNumber;
 //using string in this context
