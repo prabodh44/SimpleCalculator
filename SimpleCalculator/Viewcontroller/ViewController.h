@@ -16,24 +16,6 @@
 #define DIVIDE 3
 #define SQRT 4
 
-//{
-//    NSInteger num1;
-//    NSInteger num2;
-//    NSInteger operand;
-//    NSInteger answer;
-//
-//    NSString *theNumber;
-//    //using string in this context
-//    //as the string can be converted
-//    //into an interger and also later
-//    //can be appeneded.
-//
-//    IBOutlet UILabel *lblText;
-//    //IBOutlet lets the compoent
-//    //to be visible to the interface builder.
-//    //It can later be used to connect the
-//    //component to the GUI
-//}
 
 @property NSInteger num1;
 @property NSInteger num2;
@@ -50,8 +32,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *lblText;
 //IBOutlet lets the compoent
-//to be visible to the interface builder.
-//It can later be used to connect the
+//be visible to the interface builder.
+//It is used to connect the
 //component to the GUI
 @end
 
